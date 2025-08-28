@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Vizhara Holidays{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#C2A74E',  // Soft gold
+            secondary: '#06B6B6',
+            accent: '#F79E1B', 
+            dark: '#101010',
+            faded: '#181818'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-dark text-white font-sans">
+<!-- HEADER -->
+<nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-lg border-b border-primary/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center space-x-3">
+      <div class="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
+        <img src="/static/images/logo.png" alt="Vizhara Holidays Logo" class="w-9 h-9 object-contain rounded-full"/>
+      </div>
+      <span class="text-2xl font-display font-bold text-primary tracking-wide pl-1">VIZHARA HOLIDAYS</span>
+    </a>
+    <div class="hidden md:flex space-x-10 text-base">
+      <a href="/" class="hover:text-primary transition">Home</a>
+      <a href="/about" class="hover:text-primary transition">About</a>
+      <a href="/packages" class="hover:text-primary transition">Packages</a>
+      <a href="/destinations" class="hover:text-primary transition">Destinations</a>
+      <a href="/testimonials" class="hover:text-primary transition">Reviews</a>
+      <a href="/contact" class="hover:text-primary transition">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-24">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-faded py-8 mt-20 border-t border-primary/20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div>
+        <div class="flex items-center mb-3">
+          <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow">
+            <img src="/static/images/logo.png" alt="Logo" class="w-6 h-6 object-contain rounded-full"/>
+          </div>
+          <span class="text-lg font-display font-bold text-primary ml-3">Vizhara Holidays</span>
+        </div>
+        <div class="text-gray-400 text-sm mb-2">Curating escapes, luxury villa experiences, and memories across South India.</div>
+        <div class="text-xs text-gray-500 mb-2">Since 2019 • 33,000+ Guests • 80+ Partner Villas</div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-primary mb-2">Navigation</h4>
+        <ul class="space-y-1 text-gray-400 text-sm">
+          <li><a href="/about" class="hover:text-primary">About</a></li>
+          <li><a href="/packages" class="hover:text-primary">Packages</a></li>
+          <li><a href="/destinations" class="hover:text-primary">Destinations</a></li>
+          <li><a href="/testimonials" class="hover:text-primary">Reviews</a></li>
+          <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-primary mb-2">Contact</h4>
+        <div class="text-gray-200 text-sm mb-1">info@vizharaholidays.com</div>
+        <div class="text-gray-200 text-sm mb-1">+91 95009 40254</div>
+        <div class="text-gray-200 text-xs">18/1, Vajravel Nagar, Kolathur, Chennai</div>
+       
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-4 mt-6 text-center text-xs text-gray-500">
+      &copy; 2025 Vizhara Holidays. All rights reserved.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
