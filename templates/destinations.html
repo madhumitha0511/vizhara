@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}Destinations - Vizhara Holidays{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative py-20 bg-gradient-to-br from-dark to-faded">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h1 class="text-5xl font-display font-bold gold-text mb-6">Dream Destinations</h1>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto">Discover Tamil Nadu's most breathtaking locations where luxury meets natural beauty</p>
+  </div>
+</section>
+
+<!-- Destination Cards -->
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="space-y-20">
+      
+      <!-- Ooty -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-4xl font-display font-bold gold-text">Ooty - Queen of Hills</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Escape to the pristine beauty of the Nilgiri Hills, where rolling tea gardens meet colonial charm. Our handpicked villas offer panoramic mountain views and access to heritage railways, botanical gardens, and misty valleys.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="font-bold gold-text">Best Time to Visit</div>
+              <div class="text-gray-400">March - June, September - November</div>
+            </div>
+            <div class="space-y-2">
+              <div class="font-bold gold-text">Average Temperature</div>
+              <div class="text-gray-400">15°C - 25°C</div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold gold-text">Popular Experiences</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Toy Train Ride</span>
+              <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Tea Garden Tours</span>
+              <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Botanical Gardens</span>
+              <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Lake Boating</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a href="/packages/ooty" class="px-8 py-3 bg-primary text-dark font-bold rounded-lg smooth-hover hover:scale-105">View Packages</a>
+            <a href="/gallery?filter=ooty" class="px-8 py-3 border border-primary gold-text font-bold rounded-lg smooth-hover hover:bg-primary hover:text-dark">See Gallery</a>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               class="rounded-2xl shadow-2xl travel-shadow w-full" alt="Ooty Hills">
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
+        </div>
+      </div>
+
+      <!-- Kodaikanal -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 relative">
+          <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               class="rounded-2xl shadow-2xl travel-shadow w-full" alt="Kodaikanal Lake">
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/20 rounded-full blur-xl"></div>
+        </div>
+        <div class="order-1 lg:order-2 space-y-6">
+          <h2 class="text-4xl font-display font-bold text-secondary">Kodaikanal - Princess of Hills</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Romance awaits in this serene hill station known for its pristine lakes and pine forests. Our lakeside villas provide the perfect setting for intimate getaways with breathtaking sunset views and tranquil boat rides.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="font-bold text-secondary">Best Time to Visit</div>
+              <div class="text-gray-400">April - June, September - October</div>
+            </div>
+            <div class="space-y-2">
+              <div class="font-bold text-secondary">Average Temperature</div>
+              <div class="text-gray-400">11°C - 20°C</div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-secondary">Popular Experiences</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-sm rounded-full">Lake Boating</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-sm rounded-full">Pine Forest Walks</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-sm rounded-full">Coaker's Walk</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-sm rounded-full">Valley Views</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a href="/packages/kodaikanal" class="px-8 py-3 bg-secondary text-dark font-bold rounded-lg smooth-hover hover:scale-105">View Packages</a>
+            <a href="/gallery?filter=kodaikanal" class="px-8 py-3 border border-secondary text-secondary font-bold rounded-lg smooth-hover hover:bg-secondary hover:text-dark">See Gallery</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Andaman -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-4xl font-display font-bold text-accent">Andaman - Tropical Paradise</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Dive into crystal-clear waters and pristine beaches in India's most exotic destination. Our beachfront accommodations offer direct access to coral reefs, water sports, and unforgettable sunsets over the Bay of Bengal.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="font-bold text-accent">Best Time to Visit</div>
+              <div class="text-gray-400">October - May</div>
+            </div>
+            <div class="space-y-2">
+              <div class="font-bold text-accent">Average Temperature</div>
+              <div class="text-gray-400">24°C - 30°C</div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-accent">Popular Experiences</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full">Scuba Diving</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full">Island Hopping</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full">Water Sports</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full">Beach Relaxation</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a href="/packages/andaman" class="px-8 py-3 bg-accent text-dark font-bold rounded-lg smooth-hover hover:scale-105">View Packages</a>
+            <a href="/gallery?filter=andaman" class="px-8 py-3 border border-accent text-accent font-bold rounded-lg smooth-hover hover:bg-accent hover:text-dark">See Gallery</a>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               class="rounded-2xl shadow-2xl travel-shadow w-full" alt="Andaman Beach">
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Coming Soon -->
+<section class="py-20 bg-faded">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-display font-bold gold-text mb-8">More Destinations Coming Soon</h2>
+    <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">We're constantly expanding our portfolio to bring you more incredible destinations</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-2xl border border-primary/20">
+        <div class="text-4xl mb-4">🏔️</div>
+        <h3 class="text-xl font-bold gold-text mb-2">Kashmir</h3>
+        <p class="text-gray-400 text-sm">Paradise on Earth - Coming 2025</p>
+      </div>
+      <div class="bg-gradient-to-br from-secondary/5 to-primary/5 p-8 rounded-2xl border border-secondary/20">
+        <div class="text-4xl mb-4">🏖️</div>
+        <h3 class="text-xl font-bold text-secondary mb-2">Goa</h3>
+        <p class="text-gray-400 text-sm">Beach Bliss - Coming 2025</p>
+      </div>
+      <div class="bg-gradient-to-br from-accent/5 to-secondary/5 p-8 rounded-2xl border border-accent/20">
+        <div class="text-4xl mb-4">🏜️</div>
+        <h3 class="text-xl font-bold text-accent mb-2">Rajasthan</h3>
+        <p class="text-gray-400 text-sm">Royal Heritage - Coming 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

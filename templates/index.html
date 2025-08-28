@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% block title %}Unforgettable Villa Getaways | Vizhara Holidays{% endblock %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center bg-[#191712] overflow-hidden">
+  <!-- Ken Burns animated background -->
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
+       class="absolute inset-0 w-full h-full object-cover brightness-75 scale-110 animate-kenburns-hero"/>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/80 to-[#191712]/95"></div>
+  <!-- Soft blurred floating graphics -->
+  <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-10 w-80 h-80 rounded-full bg-cream/10 blur-3xl opacity-35"></div>
+  <div class="pointer-events-none absolute right-8 bottom-0 w-40 h-40 rounded-full bg-accent/10 blur-2xl opacity-25"></div>
+
+  <div class="relative z-10 px-5 sm:px-8 flex flex-col items-center w-full max-w-3xl mx-auto">
+    <!-- Heading with logo beside text -->
+    <div class="flex items-center justify-center gap-3 mb-5">
+      <img src="/static/images/logo.png" alt="Vizhara Holidays Logo"
+        class="w-12 h-12 md:w-16 md:h-16 rounded-full shadow-xl ring-2 ring-cream/60 animate-fade-in-up" />
+      <h1 class="text-3xl md:text-5xl font-display font-extrabold golden-text tracking-tight animate-fade-in-down">
+        Vizhara Holidays
+      </h1>
+    </div>
+    <p class="text-base md:text-xl cream-text mb-8 font-medium animate-fade-in-up delay-300">
+      Bespoke escapes, luxury villas & journeys crafted for unforgettable memories.
+    </p>
+    <a href="#packages"
+      class="inline-block px-10 py-4 rounded-full font-bold text-dark bg-gradient-to-r from-[#f9eab2] via-[#ecd483] to-[#be972b] shadow-xl border border-[#edc963] hover:scale-105 transition-all tracking-wide animate-fade-in-up delay-600"
+      style="font-family:'Playfair Display', serif; font-size:1.15rem;">
+      Book Your Journey
+    </a>
+  </div>
+  <style>
+    .cream-text { color: #f8f5ed !important; }
+    .golden-text {
+      background: linear-gradient(90deg,#faeed5 10%,#ceb463 90%);
+      -webkit-background-clip: text; color: transparent; background-clip: text;
+    }
+    @keyframes kenburns-hero { 0%{transform:scale(1.13);} 100%{transform:scale(1.02);} }
+    .animate-kenburns-hero { animation: kenburns-hero 18s ease-in-out forwards; }
+    @keyframes fadeInDown { 0% {opacity:0;transform:translateY(-36px);} 100% {opacity:1;transform:translateY(0);} }
+    .animate-fade-in-down { animation: fadeInDown .9s cubic-bezier(.77,0,.175,1) .2s forwards; }
+    @keyframes fadeInUp { 0% {opacity:0;transform:translateY(36px);} 100% {opacity:1;transform:translateY(0);} }
+    .animate-fade-in-up { animation: fadeInUp .9s cubic-bezier(.77,0,.175,1) .2s forwards; }
+    @media(max-width:600px){
+      #hero h1 { font-size:1.4rem;}
+      #hero p { font-size:1rem;}
+    }
+  </style>
+</section>
+
+
+  <!-- Animated Floating Stats -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-xl flex flex-col md:flex-row items-center justify-center gap-4 px-2">
+    <!-- Luxury Villas -->
+    <div class="flex-grow basis-0 min-w-[140px] max-w-[165px] p-4 md:p-3 bg-gradient-to-tr from-cream/15 via-[#2a2722]/70 to-[#685e50]/70 rounded-xl shadow-xl border border-cream/10 backdrop-blur transition hover:-translate-y-1 hover:scale-105 duration-200 flex items-center gap-3 animate-stats-in delay-700">
+      <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-xl bg-cream/25 text-primary shadow">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17a2 2 0 11-4 0L5 7h14l2 10a2 2 0 11-4 0M7 7v4M17 7v4" /></svg>
+      </span>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="text-lg font-bold golden-text leading-none">80+</div>
+        <div class="text-[13px] cream-text font-medium">Luxury Villas</div>
+      </div>
+    </div>
+    <!-- Happy Guests -->
+    <div class="flex-grow basis-0 min-w-[140px] max-w-[165px] p-4 md:p-3 bg-gradient-to-tr from-accent/15 via-[#212c28]/70 to-[#20554c]/70 rounded-xl shadow-xl border border-accent/10 backdrop-blur transition hover:-translate-y-1 hover:scale-105 duration-200 flex items-center gap-3 animate-stats-in delay-900">
+      <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-xl bg-accent/30 text-primary shadow">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 016-6 6 6 0 016 6v2"/></svg>
+      </span>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="text-lg font-bold cream-text leading-none">33K+</div>
+        <div class="text-[13px] cream-text font-medium">Happy Guests</div>
+      </div>
+    </div>
+    <!-- Concierge -->
+    <div class="flex-grow basis-0 min-w-[140px] max-w-[165px] p-4 md:p-3 bg-gradient-to-tr from-cream/15 via-[#1d232f]/70 to-[#257781]/70 rounded-xl shadow-xl border border-accent/10 backdrop-blur transition hover:-translate-y-1 hover:scale-105 duration-200 flex items-center gap-3 animate-stats-in delay-1100">
+      <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-xl bg-accent/20 text-primary shadow">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </span>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="text-lg font-bold cream-text leading-none">24/7</div>
+        <div class="text-[13px] cream-text font-medium">Concierge</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .golden-text {
+      background: linear-gradient(90deg, #f8f5ed 0%, #e7e2d3 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+      background-clip: text;
+    }
+    .cream-text {
+      color: #f8f5ed !important;
+    }
+    @keyframes statsIn { 0% {opacity:0;transform:translateY(24px) scale(.97);} 100% {opacity:1;transform:translateY(0) scale(1);} }
+    .animate-stats-in { animation: statsIn 0.77s cubic-bezier(.77,0,.175,1) both; }
+    .delay-700 { animation-delay: 0.7s !important; }
+    .delay-900 { animation-delay: 0.9s !important; }
+    .delay-1100 { animation-delay: 1.1s !important; }
+    @keyframes kenburns-hero { 0%{transform:scale(1.13);} 100%{transform:scale(1.02);} }
+    .animate-kenburns-hero { animation: kenburns-hero 18s ease-in-out forwards; }
+    @keyframes fadeInDown { 0% {opacity:0;transform:translateY(-36px);} 100% {opacity:1;transform:translateY(0);} }
+    @keyframes fadeInUp { 0% {opacity:0;transform:translateY(36px);} 100% {opacity:1;transform:translateY(0);} }
+    .animate-fade-in-down { animation: fadeInDown .9s cubic-bezier(.77,0,.175,1) .15s forwards; }
+    .animate-fade-in-up { animation: fadeInUp .9s cubic-bezier(.77,0,.175,1) .15s forwards; }
+    .delay-300 { animation-delay: 0.3s !important; }
+    .delay-600 { animation-delay: 0.6s !important; }
+    /* Responsive tweaks */
+    @media (max-width:600px){
+      #hero h1 { font-size:1.3rem;}
+      #hero p, #hero .cream-text, .cream-text { font-size:1rem;}
+      .golden-text { font-size:1.1rem;}
+    }
+  </style>
+</section>
+
+<!-- ABOUT US -->
+<section id="about" class="relative py-16 bg-gradient-to-b from-[#191712] via-black/95 to-black/90 overflow-hidden">
+  <div class="absolute top-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
+    <svg class="relative block w-full h-12 text-cream opacity-30" fill="currentColor" viewBox="0 0 1440 320">
+      <ellipse cx="720" cy="160" rx="600" ry="70"></ellipse>
+    </svg>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Graphics Left -->
+    <div class="relative group">
+      <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&w=900&q=80"
+           class="rounded-3xl shadow-2xl group-hover:scale-105 transition duration-700 object-cover h-72 w-full" alt="Luxury Villa"/>
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-cream/15 via-transparent to-accent/10 opacity-50"></div>
+      <svg class="absolute top-5 left-5 w-14 h-14 opacity-20 text-cream" fill="currentColor" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="10"/></svg>
+    </div>
+    <!-- Right Content -->
+    <div>
+      <h2 class="text-2xl md:text-4xl font-display font-extrabold golden-text mb-4 animate-fade-in-down">Who We Are</h2>
+      <p class="text-base cream-text mb-6 leading-relaxed">
+        <span class="golden-text">Vizhara Holidays</span> curates bespoke escapes, blending luxury villas, unique experiences, and seamless service.<br>
+        With <span class="cream-text font-semibold">6+ years of excellence</span>, we've served over
+        <span class="golden-text font-semibold">33,000 happy guests</span> in breathtaking locations.
+      </p>
+      <div class="grid grid-cols-3 gap-3 mt-3">
+        <div class="p-4 bg-cream/10 rounded-xl text-center shadow hover:scale-105 transition">
+          <div class="text-xl font-bold golden-text">80+</div>
+          <div class="text-xs cream-text">Signature Villas</div>
+        </div>
+        <div class="p-4 bg-cream/10 rounded-xl text-center shadow hover:scale-105 transition">
+          <div class="text-xl font-bold cream-text">12.8K+</div>
+          <div class="text-xs cream-text">Bookings</div>
+        </div>
+        <div class="p-4 bg-cream/10 rounded-xl text-center shadow hover:scale-105 transition">
+          <div class="text-xl font-bold cream-text">24/7</div>
+          <div class="text-xs cream-text">Concierge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="relative py-16 bg-gradient-to-b from-cream/10 via-[#191712] to-black overflow-hidden">
+  <img src="https://cdn-icons-png.flaticon.com/512/543/543107.png"
+       class="absolute top-14 right-10 w-16 opacity-40 pointer-events-none"/>
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-2xl md:text-4xl font-display font-extrabold mb-8 golden-text">
+      Exceptional Escapes & Packages
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card Example -->
+      <div class="relative group bg-cream/10 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500 package-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&w=600&q=80"
+             class="rounded-xl mb-4 h-36 w-full object-cover group-hover:opacity-95 transition"/>
+        <div class="text-lg font-bold golden-text mb-2">Andaman Dream</div>
+        <div class="cream-text text-[15px] mb-4">Crystal beaches, private cruises, mangrove adventures.</div>
+        <a href="/static/pdfs/andaman-tour.pdf"
+           class="px-5 py-2 rounded-full border border-cream text-cream hover:bg-cream hover:text-primary transition font-bold">Download PDF</a>
+      </div>
+      <div class="relative group bg-cream/10 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500 package-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&w=600&q=80"
+             class="rounded-xl mb-4 h-36 w-full object-cover group-hover:opacity-95 transition"/>
+        <div class="text-lg font-bold golden-text mb-2">Mountain Majesty</div>
+        <div class="cream-text text-[15px] mb-4">Ooty, Kodaikanal, lakeside retreats, heritage tours.</div>
+        <a href="/static/pdfs/ooty-package.pdf"
+           class="px-5 py-2 rounded-full border border-cream text-cream hover:bg-cream hover:text-primary transition font-bold">Download PDF</a>
+      </div>
+      <div class="relative group bg-cream/10 rounded-2xl p-6 shadow-xl hover:scale-105 transition duration-500 package-card">
+        <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&w=600&q=80"
+             class="rounded-xl mb-4 h-36 w-full object-cover group-hover:opacity-95 transition"/>
+        <div class="text-lg font-bold golden-text mb-2">Coastal Bliss</div>
+        <div class="cream-text text-[15px] mb-4">Beachfront villas, coral reef dives, sunset cruises.</div>
+        <a href="/static/pdfs/beach-package.pdf"
+           class="px-5 py-2 rounded-full border border-cream text-cream hover:bg-cream hover:text-primary transition font-bold">Download PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-14 bg-gradient-to-b from-[#191712]/95 to-cream/5">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-4xl font-display font-bold text-center mb-10 golden-text">
+      What Our Guests Say
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <blockquote class="testimonial border-l-4 border-cream pl-5 py-5 bg-cream/10 rounded-xl shadow text-cream">
+        <div class="quote text-lg font-semibold">“Unparalleled hospitality, breathtaking villas, seamless trip!”</div>
+        <div class="author text-accent text-sm mt-2">– Priya N., Chennai</div>
+      </blockquote>
+      <blockquote class="testimonial border-l-4 border-accent pl-5 py-5 bg-cream/10 rounded-xl shadow text-cream">
+        <div class="quote text-lg font-semibold">“Our best family holiday. 24/7 support made all the difference!”</div>
+        <div class="author text-accent text-sm mt-2">– Karthik R., Bengaluru</div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-14 bg-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-4xl font-display font-bold text-center mb-8 golden-text">
+      Moments from Paradise
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1" class="gallery-img rounded-xl hover:scale-105 shadow-xl transition"/>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="gallery-img rounded-xl hover:scale-105 shadow-xl transition"/>
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b" class="gallery-img rounded-xl hover:scale-105 shadow-xl transition"/>
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" class="gallery-img rounded-xl hover:scale-105 shadow-xl transition"/>
+      <!-- Add more images as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Section-wise GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  ['#hero','#about','#packages','#testimonials','#gallery'].forEach(function(id){
+    if(document.querySelector(id)){
+      gsap.fromTo(id,{ opacity:0, y:60 },{ opacity:1, y:0, duration:1, ease:"power2.out", scrollTrigger:{ trigger:id, start:"top 90%", once:true } });
+    }
+  });
+  gsap.utils.toArray(".package-card, .testimonial, .gallery-img").forEach(el => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 95%",
+        once:true
+      }
+    });
+  });
+</script>
+
+{% endblock %}

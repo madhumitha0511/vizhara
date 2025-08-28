@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}About Us - Vizhara Holidays{% endblock %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section id="hero" 
+  class="relative flex flex-col justify-center items-center min-h-[320px] md:min-h-[400px] py-10 md:py-20 bg-gradient-to-br from-dark via-[#181818] to-faded overflow-hidden">
+  <!-- Animated floating shapes (visually appealing, non-blocking) -->
+  <div class="pointer-events-none absolute inset-0 z-0">
+    <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-60 h-60 md:w-96 md:h-96 bg-primary/10 rounded-full blur-3xl opacity-40 animate-float-y"></div>
+    <div class="absolute right-8 bottom-0 w-32 h-32 bg-yellow-100/10 rounded-full blur-2xl opacity-30 animate-float-x"></div>
+  </div>
+  <div class="relative z-10 w-full px-3 sm:px-8 max-w-lg md:max-w-2xl mx-auto text-center flex flex-col items-center">
+    <div class="shadow-xl rounded-full bg-gradient-to-br from-primary/90 via-yellow-100/30 to-white/10 ring-2 ring-primary w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-5 animate-fadein-down">
+      <img src="/static/images/logo.png" alt="Vizhara Logo" class="w-8 h-8 md:w-11 md:h-11 object-contain rounded-full" />
+    </div>
+    <h1 class="text-xl md:text-3xl font-extrabold golden-text mb-2 animate-fadein-up">About Vizhara Holidays</h1>
+    <p class="text-[15px] md:text-lg text-gray-200 font-medium leading-relaxed mb-1 animate-fadein-up delay-200">
+      Extraordinary journeys through Tamil Nadu's most breathtaking destinations.<br>
+      <span class="font-semibold text-primary">6+ years of trusted travel excellence</span>
+    </p>
+  </div>
+</section>
+
+<!-- GSAP Section Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+['#hero','#story','#purpose','#why-us','#values','#cta'].forEach(function(id){
+  if(document.querySelector(id)){
+    gsap.fromTo(id,{ opacity:0, y:60 },{ opacity:1, y:0, duration:0.85, ease:"power2.out", scrollTrigger:{ trigger:id, start:"top 90%", once:true } });
+  }
+});
+// Animate cards in any visible section (responsive)
+gsap.utils.toArray('.travel-card').forEach((el,i)=> {
+  gsap.from(el,{
+    opacity:0,
+    y:32,
+    duration:.7,
+    stagger:0.07,
+    ease:"power2.out",
+    scrollTrigger:{
+      trigger:el,
+      start:"top 97%",
+      once:true
+    }
+  });
+});
+</script>
+<style>
+.golden-text { background: linear-gradient(90deg, #e0ba60 0%, #ab8f3e 100%); -webkit-background-clip: text; color: transparent; background-clip: text; }
+@keyframes floatY { 0%{transform:translateY(0);}50%{transform:translateY(-16px);}100%{transform:translateY(0);} }
+@keyframes floatX { 0%{transform:translateX(0);}50%{transform:translateX(10px);}100%{transform:translateX(0);} }
+@keyframes fadeinDown {from{opacity:0;transform:translateY(-30px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeinUp {from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
+.animate-float-y { animation: floatY 6s ease-in-out infinite; }
+.animate-float-x { animation: floatX 10s ease-in-out infinite; }
+.animate-fadein-down { animation: fadeinDown 1s both; }
+.animate-fadein-up { animation: fadeinUp 1s both; }
+.delay-200 { animation-delay:.2s !important;}
+/* RESPONSIVENESS: ensures tight readable layouts on mobile */
+@media (max-width: 600px) {
+  #hero h1 { font-size: 1.3rem; }
+  #hero p { font-size: 0.98rem; }
+  .travel-card, .golden-text { font-size: 1rem; }
+}
+</style>
+
+<!-- STORY SECTION -->
+<section class="py-14 bg-black/95 animate-fadein-slow">
+  <div class="max-w-7xl mx-auto px-3 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-4 order-2 lg:order-1">
+      <h2 class="text-2xl md:text-3xl font-display font-bold golden-text mb-2">Our Journey</h2>
+      <p class="text-base md:text-lg text-gray-300">Vizhara Holidays began with a vision to redefine South Indian luxury travel. Our story is one of seamless stays, breathtaking tours, and a promise to make every trip truly memorable.</p>
+      <ul class="space-y-2 text-gray-400 text-sm md:text-base">
+        <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 bg-primary rounded-full"></span> 80+ partner villas, 20+ owned properties</li>
+        <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 bg-accent rounded-full"></span> 33,000+ happy guests, 12,800+ bookings</li>
+        <li class="flex items-center gap-2"><span class="inline-block w-3 h-3 bg-secondary rounded-full"></span> Full-service property management and guest care</li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <div class="rounded-lg bg-gradient-to-tr from-primary/60 to-yellow-900/40 p-5 flex flex-col items-center animate-bounceY"><span class="golden-text text-xl font-bold">2019</span>
+          <span class="text-xs text-gray-400 mt-1">Founded</span></div>
+        <div class="rounded-lg bg-gradient-to-tr from-accent/50 to-faded/20 p-5 flex flex-col items-center animate-bounceY"><span class="golden-text text-xl font-bold">100+</span>
+          <span class="text-xs text-gray-400 mt-1">Properties</span></div>
+      </div>
+    </div>
+    <div class="relative order-1 lg:order-2">
+      <img src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?auto=format&fit=crop&w=600&q=80" class="w-full rounded-2xl shadow-2xl border-faded/20 border animate-scalein" alt="Luxury Villa">
+      <svg class="absolute -bottom-6 -right-6 w-20 h-20 opacity-30 text-primary animate-float-up" fill="none" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="15" /></svg>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="py-14 bg-gradient-to-br from-faded to-dark/90 relative">
+  <svg class="absolute right-0 top-0 w-24 h-24 text-primary/10 animate-rotate" fill="currentColor" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48"/></svg>
+  <div class="max-w-6xl mx-auto px-3">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-display font-bold golden-text mb-2">Our Purpose</h2>
+      <p class="text-base md:text-lg text-gray-300">Driven by passion, guided by excellence</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-7">
+      <div class="travel-card flex flex-col items-center p-7 rounded-2xl bg-white/5 border border-primary/20 backdrop-blur group shadow-sm transition hover:scale-105 hover:shadow-2xl animate-fadein-left">
+        <div class="w-12 h-12 bg-primary/70 rounded-full flex items-center justify-center mb-4 text-xl text-white shadow-md animate-floaticon">🎯</div>
+        <h3 class="text-xl font-bold golden-text mb-2">Our Mission</h3>
+        <p class="text-sm md:text-base text-gray-200 text-center">Delivering truly personal hospitality and crafting memories that inspire, delight, and last a lifetime.</p>
+      </div>
+      <div class="travel-card flex flex-col items-center p-7 rounded-2xl bg-white/5 border border-secondary/20 backdrop-blur group shadow-sm transition hover:scale-105 hover:shadow-2xl animate-fadein-right">
+        <div class="w-12 h-12 bg-secondary/70 rounded-full flex items-center justify-center mb-4 text-xl text-white shadow-md animate-floaticon">🌟</div>
+        <h3 class="text-xl font-bold text-secondary mb-2">Our Vision</h3>
+        <p class="text-sm md:text-base text-gray-200 text-center">To set the luxury standard for travel and villa stays in Tamil Nadu, offering service that's sustainable, innovative, and meaningful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-14 bg-dark/95 relative">
+  <div class="max-w-6xl mx-auto px-3">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-display font-bold golden-text mb-2">Why Travel With Vizhara?</h2>
+      <p class="text-base md:text-lg text-gray-300">Experience the difference—personalized, attentive, expert.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="travel-card space-y-3 bg-white/5 p-7 rounded-xl transition shadow group hover:scale-105 hover:bg-primary/20 animate-fadein-up">
+        <span class="inline-flex w-12 h-12 items-center justify-center bg-yellow-200/60 rounded-xl text-2xl shadow">🏖️</span>
+        <h4 class="font-bold golden-text text-base md:text-lg">Handpicked Properties</h4>
+        <p class="text-sm text-gray-300">Resort villas in Ooty, Kodaikanal, and along the coast. Each personally selected and quality-checked.</p>
+      </div>
+      <div class="travel-card space-y-3 bg-white/5 p-7 rounded-xl transition shadow group hover:scale-105 hover:bg-secondary/10 animate-fadein-up delay-200">
+        <span class="inline-flex w-12 h-12 items-center justify-center bg-secondary/30 rounded-xl text-2xl shadow">🤝</span>
+        <h4 class="font-bold golden-text text-base md:text-lg">24/7 Support</h4>
+        <p class="text-sm text-gray-300">Concierge and assistance available day and night, from booking to check-out.</p>
+      </div>
+      <div class="travel-card space-y-3 bg-white/5 p-7 rounded-xl transition shadow group hover:scale-105 hover:bg-accent/10 animate-fadein-up delay-400">
+        <span class="inline-flex w-12 h-12 items-center justify-center bg-accent/30 rounded-xl text-2xl shadow">✨</span>
+        <h4 class="font-bold golden-text text-base md:text-lg">Bespoke Experiences</h4>
+        <p class="text-sm text-gray-300">Custom itineraries for romantic escapes, families & groups, or business retreats—always unique and seamless.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="py-14 bg-gradient-to-br from-faded to-dark">
+  <div class="max-w-6xl mx-auto px-3">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-display font-bold golden-text mb-2">Our Core Values</h2>
+      <p class="text-base md:text-lg text-gray-300">The heart and soul of our team and service</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center space-y-2 bg-gradient-to-br from-primary/5 via-faded/20 to-white/5 p-6 rounded-xl shadow-sm animate-slidein-up">
+        <div class="text-2xl mb-1">🎖️</div>
+        <div class="font-bold golden-text">Excellence</div>
+        <div class="text-xs text-gray-400">Perfection in every detail</div>
+      </div>
+      <div class="text-center space-y-2 bg-gradient-to-br from-accent/10 via-faded/20 to-white/10 p-6 rounded-xl shadow-sm animate-slidein-up delay-150">
+        <div class="text-2xl mb-1">💎</div>
+        <div class="font-bold golden-text">Authenticity</div>
+        <div class="text-xs text-gray-400">Genuine, honest relationships</div>
+      </div>
+      <div class="text-center space-y-2 bg-gradient-to-br from-secondary/10 via-faded/20 to-white/10 p-6 rounded-xl shadow-sm animate-slidein-up delay-300">
+        <div class="text-2xl mb-1">🌱</div>
+        <div class="font-bold golden-text">Sustainability</div>
+        <div class="text-xs text-gray-400">Future-focused, responsible travel</div>
+      </div>
+      <div class="text-center space-y-2 bg-gradient-to-br from-primary/10 via-faded/20 to-white/10 p-6 rounded-xl shadow-sm animate-slidein-up delay-450">
+        <div class="text-2xl mb-1">❤️</div>
+        <div class="font-bold golden-text">Passion</div>
+        <div class="text-xs text-gray-400">Making every journey a joy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="relative py-16 overflow-hidden animate-fadein-slow">
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover opacity-35" alt="Call to Action Background" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/90"></div>
+    <svg class="absolute right-2 top-4 w-24 h-24 text-primary/20 animate-spin-slow" fill="none" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="10" /></svg>
+  </div>
+  <div class="relative z-10 max-w-3xl mx-auto text-center px-4">
+    <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-4 animate-fadein-down">Ready to Experience Vizhara?</h2>
+    <p class="text-base md:text-lg text-gray-200 mb-7 max-w-2xl mx-auto animate-fadein-up">
+      Join thousands of travelers whose journeys began here. Discover what makes Vizhara the ultimate escape.
+    </p>
+    <a href="/contact" class="inline-block px-8 py-3 bg-primary text-dark font-bold text-base rounded-full shadow-lg hover:scale-105 transition-all duration-300 animate-bounceY">
+      Start Your Journey
+    </a>
+  </div>
+</section>
+
+<style>
+.golden-text {
+  background: linear-gradient(90deg, #e0ba60 4%, #988045 85%);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+@keyframes floatY { 0%{transform:translateY(0);}50%{transform:translateY(-8px);}100%{transform:translateY(0);} }
+@keyframes floatUp { 0%{transform:translateY(16px);}to{transform:translateY(-4px);} }
+@keyframes fadeinDown {from{opacity:0;transform:translateY(-35px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeinUp {from{opacity:0;transform:translateY(35px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeinLeft {from{opacity:0;transform:translateX(-40px);} to{opacity:1;transform:translateX(0);} }
+@keyframes fadeinRight {from{opacity:0;transform:translateX(40px);} to{opacity:1;transform:translateX(0);} }
+@keyframes fadeinSlow {from{opacity:0;} to{opacity:1;} }
+@keyframes slideinUp {from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+@keyframes scalein {from{opacity:0;transform:scale(0.85);} to{opacity:1;transform:scale(1);} }
+@keyframes spinSlow {0%{transform: rotate(0); }100%{transform: rotate(360deg);}}
+@keyframes zoomSlow {0%{transform:scale(1.05);}100%{transform:scale(1);}}
+
+.animate-fadein-down { animation: fadeinDown 1s both; }
+.animate-fadein-up { animation: fadeinUp 1s both; }
+.animate-fadein-slow { animation: fadeinSlow 2s both; }
+.animate-float-y { animation: floatY 3s ease-in-out infinite; }
+.animate-float-up { animation: floatUp 2.5s infinite alternate-reverse; }
+.animate-bounceY { animation: floatY 2.3s ease-in-out infinite; }
+.animate-fadein-left { animation: fadeinLeft 1s both; }
+.animate-fadein-right { animation: fadeinRight 1s both; }
+.animate-slidein-up { animation: slideinUp 0.95s both; }
+.animate-scalein { animation: scalein 0.85s both; }
+.animate-spin-slow { animation: spinSlow 14s linear infinite; }
+.animate-zoom-slow { animation: zoomSlow 18s linear alternate infinite; }
+.animate-floaticon { animation: floatY 2s ease-in-out infinite; }
+.delay-150 { animation-delay: .15s !important; }
+.delay-200 { animation-delay: .2s !important; }
+.delay-300 { animation-delay: .3s !important; }
+.delay-400 { animation-delay: .4s !important; }
+.delay-450 { animation-delay: .45s !important; }
+</style>
+{% endblock %}

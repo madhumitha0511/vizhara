@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Vizhara Holidays{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f8f5ed',   // Luxury cream-white
+            secondary: '#06B6B6',
+            accent: '#F79E1B', 
+            dark: '#101010',
+            faded: '#181818'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+</script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-dark text-white font-sans min-h-screen flex flex-col">
+<!-- HEADER -->
+<nav class="fixed w-full z-50 bg-dark/90 backdrop-blur border-b border-primary/10 shadow-lg">
+  <div class="w-full px-2 sm:px-6 lg:px-10 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center space-x-2">
+      <div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow">
+        <img src="/static/images/logo.png" alt="Vizhara Holidays Logo" class="w-13 h-13 object-contain rounded-full"/>
+      </div>
+      <span class="text-lg sm:text-2xl font-display font-bold text-primary tracking-wide">VIZHARA HOLIDAYS</span>
+    </a>
+    <div class="hidden md:flex space-x-4 lg:space-x-10 text-base">
+      <a href="/" class="hover:text-primary transition">Home</a>
+      <a href="/about" class="hover:text-primary transition">About</a>
+      <a href="/packages" class="hover:text-primary transition">Packages</a>
+      <a href="/destinations" class="hover:text-primary transition">Destinations</a>
+      <a href="/testimonials" class="hover:text-primary transition">Reviews</a>
+      <a href="/contact" class="hover:text-primary transition">Contact</a>
+    </div>
+    <!-- Mobile menu button -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-btn" aria-label="Open navigation" class="text-primary hover:text-accent">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-dark/95 border-t border-primary/20 pt-2 pb-4 px-2 left-0 top-16 transition duration-300">
+    <a href="/" class="block py-2 px-4 hover:text-primary transition">Home</a>
+    <a href="/about" class="block py-2 px-4 hover:text-primary transition">About</a>
+    <a href="/packages" class="block py-2 px-4 hover:text-primary transition">Packages</a>
+    <a href="/destinations" class="block py-2 px-4 hover:text-primary transition">Destinations</a>
+    <a href="/testimonials" class="block py-2 px-4 hover:text-primary transition">Reviews</a>
+    <a href="/contact" class="block py-2 px-4 hover:text-primary transition">Contact</a>
+  </div>
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.onclick = () => menu.classList.toggle('hidden');
+  </script>
+</nav>
+<!-- FLOATING CONTACT BUTTON -->
+<a href="/contact"
+  class="fixed right-4 bottom-5 z-40 px-6 py-2 sm:px-8 sm:py-3 font-display font-semibold text-base sm:text-lg rounded-full shadow-xl border border-[#d6c488] 
+         bg-gradient-to-r from-[#f8f5ed] via-[#ecd483] to-[#be972b] text-[#232018] hover:scale-105 transition duration-300"
+  title="Contact Us">
+  Contact Us
+</a>
+
+
+<main class="flex-grow pt-24 md:pt-28 pb-10 px-0 sm:px-0 lg:px-0 w-full">
+  <section class="w-full">
+    {% block content %}{% endblock %}
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-faded pt-8 pb-5 border-t border-primary/20 mt-auto w-full">
+  <div class="w-full px-2 sm:px-6 lg:px-10">
+    <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-8 w-full">
+      <div class="w-full md:w-1/3 mb-5 md:mb-0">
+        <div class="flex items-center mb-2">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center shadow">
+            <img src="/static/images/logo.png" alt="Logo" class="w-13 h-13 object-contain rounded-full"/>
+          </div>
+          <span class="text-base sm:text-lg font-display font-bold text-primary ml-2">Vizhara Holidays</span>
+        </div>
+        <div class="text-gray-400 text-xs sm:text-sm mb-1">Curating escapes, luxury villa experiences, and memories across South India.</div>
+        <div class="text-xs text-gray-500 mb-2">Since 2019 • 33,000+ Guests • 80+ Partner Villas</div>
+      </div>
+      <div class="w-full md:w-1/3 mb-5 md:mb-0">
+        <h4 class="font-semibold text-primary mb-2 text-xs sm:text-sm">Navigation</h4>
+        <ul class="space-y-1 text-gray-400 text-xs sm:text-sm">
+          <li><a href="/about" class="hover:text-primary">About</a></li>
+          <li><a href="/packages" class="hover:text-primary">Packages</a></li>
+          <li><a href="/destinations" class="hover:text-primary">Destinations</a></li>
+          <li><a href="/testimonials" class="hover:text-primary">Reviews</a></li>
+          <li><a href="/contact" class="hover:text-primary">Contact</a></li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/3">
+        <h4 class="font-semibold text-primary mb-2 text-xs sm:text-sm">Contact</h4>
+        <div class="text-gray-200 text-xs sm:text-sm mb-1">info@vizharaholidays.com</div>
+        <div class="text-gray-200 text-xs sm:text-sm mb-1">+91 95009 40254</div>
+        <div class="text-gray-200 text-xs">18/1, Vajravel Nagar, Kolathur, Chennai</div>
+        <!-- Social Icons -->
+        <div class="flex space-x-3 mt-3">
+          <a href="https://facebook.com" class="bg-gradient-to-tr from-secondary to-primary rounded-full w-8 h-8 flex items-center justify-center text-white text-lg shadow hover:scale-110 transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" class="bg-gradient-to-tr from-accent to-secondary rounded-full w-8 h-8 flex items-center justify-center text-white text-lg shadow hover:scale-110 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" class="bg-gradient-to-tr from-primary to-accent rounded-full w-8 h-8 flex items-center justify-center text-white text-lg shadow hover:scale-110 transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-2 mt-5 text-center text-xs text-gray-500 w-full">
+      &copy; 2025 Vizhara Holidays. All rights reserved.
+    </div>
+  </div>
+</footer>
+<!-- Font Awesome for social icons -->
+<script src="https://kit.fontawesome.com/0c81e25358.js" crossorigin="anonymous"></script>
+</body>
+</html>
